@@ -2,39 +2,39 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression" duration-ms="480" started-at="2020-04-28T15:24:16 IST" finished-at="2020-04-28T15:24:17 IST">
+  <suite name="Regression" duration-ms="96" started-at="2020-04-28T18:34:52 IST" finished-at="2020-04-28T18:34:52 IST">
     <groups>
     </groups>
-    <test name="Claims" duration-ms="327" started-at="2020-04-28T15:24:16 IST" finished-at="2020-04-28T15:24:17 IST">
+    <test name="Claims" duration-ms="40" started-at="2020-04-28T18:34:52 IST" finished-at="2020-04-28T18:34:52 IST">
       <class name="org.company.bussinesslayer.Controls.Login">
-        <test-method status="PASS" signature="LoginToDashboard()[pri:0, instance:org.company.bussinesslayer.Controls.Login@3c419631]" name="LoginToDashboard" duration-ms="33" started-at="2020-04-28T15:24:17 IST" finished-at="2020-04-28T15:24:17 IST">
+        <test-method status="PASS" signature="LoginToDashboard()[pri:0, instance:org.company.bussinesslayer.Controls.Login@180bc464]" name="LoginToDashboard" duration-ms="5" started-at="2020-04-28T18:34:52 IST" finished-at="2020-04-28T18:34:52 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginToDashboard -->
       </class> <!-- org.company.bussinesslayer.Controls.Login -->
       <class name="org.company.bussinesslayer.Controls.ServiceDate">
-        <test-method status="PASS" signature="ApplyServiceDate()[pri:0, instance:org.company.bussinesslayer.Controls.ServiceDate@418e7838]" name="ApplyServiceDate" duration-ms="0" started-at="2020-04-28T15:24:17 IST" finished-at="2020-04-28T15:24:17 IST">
+        <test-method status="PASS" signature="ApplyServiceDate()[pri:0, instance:org.company.bussinesslayer.Controls.ServiceDate@1324409e]" name="ApplyServiceDate" duration-ms="0" started-at="2020-04-28T18:34:52 IST" finished-at="2020-04-28T18:34:52 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ApplyServiceDate -->
       </class> <!-- org.company.bussinesslayer.Controls.ServiceDate -->
     </test> <!-- Claims -->
-    <test name="Contracts" duration-ms="8" started-at="2020-04-28T15:24:17 IST" finished-at="2020-04-28T15:24:17 IST">
+    <test name="Contracts" duration-ms="1" started-at="2020-04-28T18:34:52 IST" finished-at="2020-04-28T18:34:52 IST">
       <class name="org.company.bussinesslayer.Controls.Login">
-        <test-method status="PASS" signature="LoginToDashboard()[pri:0, instance:org.company.bussinesslayer.Controls.Login@31d7b7bf]" name="LoginToDashboard" duration-ms="0" started-at="2020-04-28T15:24:17 IST" finished-at="2020-04-28T15:24:17 IST">
+        <test-method status="PASS" signature="LoginToDashboard()[pri:0, instance:org.company.bussinesslayer.Controls.Login@35fb3008]" name="LoginToDashboard" duration-ms="1" started-at="2020-04-28T18:34:52 IST" finished-at="2020-04-28T18:34:52 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginToDashboard -->
       </class> <!-- org.company.bussinesslayer.Controls.Login -->
       <class name="org.company.bussinesslayer.Controls.ServiceDate">
-        <test-method status="PASS" signature="ApplyServiceDate()[pri:0, instance:org.company.bussinesslayer.Controls.ServiceDate@635eaaf1]" name="ApplyServiceDate" duration-ms="0" started-at="2020-04-28T15:24:17 IST" finished-at="2020-04-28T15:24:17 IST">
+        <test-method status="PASS" signature="ApplyServiceDate()[pri:0, instance:org.company.bussinesslayer.Controls.ServiceDate@7225790e]" name="ApplyServiceDate" duration-ms="0" started-at="2020-04-28T18:34:52 IST" finished-at="2020-04-28T18:34:52 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ApplyServiceDate -->
       </class> <!-- org.company.bussinesslayer.Controls.ServiceDate -->
     </test> <!-- Contracts -->
   </suite> <!-- Regression -->
-  <suite name="Smoke" duration-ms="0" started-at="2020-04-28T15:24:17 IST" finished-at="2020-04-28T15:24:17 IST">
+  <suite name="Smoke" duration-ms="0" started-at="2020-04-28T18:34:52 IST" finished-at="2020-04-28T18:34:52 IST">
     <groups>
     </groups>
   </suite> <!-- Smoke -->
