@@ -103,8 +103,9 @@ public class TestNGHelper {
 
 	protected static void runtTestNgFiles() {
 		_testNGInstance= new TestNG();
+		//testSuiteList.remove(0);
 		_testNGInstance.setXmlSuites(testSuiteList);
-		 Suite.setFileName("Regression.xml");
+		 //Suite.setFileName("Regression.xml");
 		_testNGInstance.setThreadCount(3);
 		_testNGInstance.run();
 	}
