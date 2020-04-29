@@ -1,6 +1,6 @@
 package org.company.databaselayer.Configurations;
 
-import org.company.databaselayer.Models.Temp;
+import org.company.databaselayer.DbEntities.Temp;
 import org.hibernate.*;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
