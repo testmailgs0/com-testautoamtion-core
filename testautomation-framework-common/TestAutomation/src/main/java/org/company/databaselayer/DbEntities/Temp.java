@@ -1,4 +1,4 @@
-package org.company.databaselayer.Models;
+package org.company.databaselayer.DbEntities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
