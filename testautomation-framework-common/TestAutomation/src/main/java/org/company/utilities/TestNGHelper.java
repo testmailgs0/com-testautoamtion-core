@@ -39,18 +39,23 @@ public class TestNGHelper {
 	}
 
 	protected static void setClassDetails(Map<String, List<String>> ClassDetails) {
-		for (String testName : ClassDetails.keySet()) {
-			for (XmlTest test : testList) {
-				if (test.getName().equalsIgnoreCase(testName)) {
-					for (String tClass : ClassDetails.get(testName)) {
-						TestClass = new XmlClass("org.company.bussinesslayer.RequestControls." + tClass);
-						testClasses.add(TestClass);
+		try {
+			for (String testName : ClassDetails.keySet()) {
+				for (XmlTest test : testList) {
+					if (test.getName().equalsIgnoreCase(testName)) {
+						for (String tClass : ClassDetails.get(testName)) {
+							TestClass = new XmlClass("org.company.bussinesslayer.RequestControls." + tClass);
+							testClasses.add(TestClass);
+						}
+						testList.get(testList.indexOf(test)).setXmlClasses(testClasses);
 					}
-					testList.get(testList.indexOf(test)).setXmlClasses(testClasses);
+
 				}
 
 			}
-
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -78,8 +83,8 @@ public class TestNGHelper {
 	protected static void createTestNGFile(XmlSuite mSuite) {
 		FileWriter writer;
 		try {
-			writer = new FileWriter(new File("TestNGSuiteFiles\\"+mSuite.getName() + ".xml"));
-			writer.write("TestNGSuiteFiles\\"+mSuite.toXml());
+			writer = new FileWriter(new File("TestNGSuiteFiles\\" + mSuite.getName() + ".xml"));
+			writer.write("TestNGSuiteFiles\\" + mSuite.toXml());
 			writer.flush();
 			writer.close();
 		} catch (IOException e) {
@@ -92,7 +97,7 @@ public class TestNGHelper {
 		try {
 			for (XmlSuite suite : testSuiteList) {
 				createTestNGFile(suite);
-				suite.setFileName("TestNGSuiteFiles\\"+suite.getName() + ".xml");
+				suite.setFileName("TestNGSuiteFiles\\" + suite.getName() + ".xml");
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
