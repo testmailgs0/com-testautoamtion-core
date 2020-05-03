@@ -19,14 +19,16 @@ public class TestExecutor extends TestNGHelper {
 		
 		  List<String> SuiteNames = Arrays.asList("Regression,Smoke".split(","));
 		  List<String> TNames = Arrays.asList("Claims,Contracts".split(","));
-		  List<String> Tclasses = Arrays.asList("Login,ServiceDate".split(","));
+		  List<String> Tclasses = Arrays.asList("RestGet,RestPost".split(","));
 		  setSuiteDetails(SuiteNames,ParallelMode.FALSE);
 		  HashMap<String,List<String>>TestToAdd = new HashMap<String,List<String>>();
 		  TestToAdd.put("Regression",TNames); setTestDetails(TestToAdd);
 		  HashMap<String,List<String>> ClassesToAdd= new
 		  HashMap<String,List<String>>(); ClassesToAdd.put("Claims",Tclasses);
-		  ClassesToAdd.put("Contracts",Tclasses); setClassDetails(ClassesToAdd);
-		  generateTestNGFiles(); runtTestNgFiles();
+		  ClassesToAdd.put("Contracts",Tclasses); 
+		  setClassDetails(ClassesToAdd);
+		  generateTestNGFiles(); 
+		  runtTestNgFiles();
 		 
 
 	}

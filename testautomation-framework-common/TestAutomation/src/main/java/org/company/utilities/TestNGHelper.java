@@ -43,7 +43,7 @@ public class TestNGHelper {
 			for (XmlTest test : testList) {
 				if (test.getName().equalsIgnoreCase(testName)) {
 					for (String tClass : ClassDetails.get(testName)) {
-						TestClass = new XmlClass("org.company.bussinesslayer.Controls." + tClass);
+						TestClass = new XmlClass("org.company.bussinesslayer.RequestControls." + tClass);
 						testClasses.add(TestClass);
 					}
 					testList.get(testList.indexOf(test)).setXmlClasses(testClasses);
@@ -75,17 +75,11 @@ public class TestNGHelper {
 
 	}
 
-	protected void runTestCases() {
-		_testNGInstance = new TestNG();
-		_testNGInstance.setXmlSuites(testSuiteList);
-
-	}
-
 	protected static void createTestNGFile(XmlSuite mSuite) {
 		FileWriter writer;
 		try {
-			writer = new FileWriter(new File(mSuite.getName() + ".xml"));
-			writer.write(mSuite.toXml());
+			writer = new FileWriter(new File("TestNGSuiteFiles\\"+mSuite.getName() + ".xml"));
+			writer.write("TestNGSuiteFiles\\"+mSuite.toXml());
 			writer.flush();
 			writer.close();
 		} catch (IOException e) {
@@ -95,18 +89,26 @@ public class TestNGHelper {
 	}
 
 	protected static void generateTestNGFiles() {
-		for (XmlSuite suite : testSuiteList) {
-			createTestNGFile(suite);
-			//suite.setFileName(suite.getName() + ".xml");
+		try {
+			for (XmlSuite suite : testSuiteList) {
+				createTestNGFile(suite);
+				suite.setFileName("TestNGSuiteFiles\\"+suite.getName() + ".xml");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
 	protected static void runtTestNgFiles() {
-		_testNGInstance= new TestNG();
-		//testSuiteList.remove(0);
-		_testNGInstance.setXmlSuites(testSuiteList);
-		 //Suite.setFileName("Regression.xml");
-		_testNGInstance.setThreadCount(3);
-		_testNGInstance.run();
+		try {
+			_testNGInstance = new TestNG();
+			_testNGInstance.setXmlSuites(testSuiteList);
+			_testNGInstance.setThreadCount(3);
+			_testNGInstance.run();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-} 
+}

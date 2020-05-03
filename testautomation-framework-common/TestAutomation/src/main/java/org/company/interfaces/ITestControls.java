@@ -1,4 +1,4 @@
-package org.company.bussinessobjects;
+package org.company.interfaces;
 
 public interface ITestControls {
 
