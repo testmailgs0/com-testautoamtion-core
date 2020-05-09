@@ -85,7 +85,7 @@ public class TestNGHelper {
 		FileWriter writer;
 		try {
 			writer = new FileWriter(new File("TestNGSuiteFiles\\" + mSuite.getName() + ".xml"));
-			writer.write("TestNGSuiteFiles\\" + mSuite.toXml());
+			writer.write(mSuite.toXml());
 			writer.flush();
 			writer.close();
 		} catch (IOException e) {
