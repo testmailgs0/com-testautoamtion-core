@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression]">
+  <test thread-count="5" name="Claims(failed)">
+    <classes>
+      <class name="org.company.bussinesslayer.RequestControls.RestPost">
+        <methods>
+          <include name="Execute"/>
+        </methods>
+      </class> <!-- org.company.bussinesslayer.RequestControls.RestPost -->
+      <class name="org.company.bussinesslayer.RequestControls.RestGet">
+        <methods>
+          <include name="Execute"/>
+        </methods>
+      </class> <!-- org.company.bussinesslayer.RequestControls.RestGet -->
+    </classes>
+  </test> <!-- Claims(failed) -->
+  <test thread-count="5" name="Contracts(failed)">
+    <classes>
+      <class name="org.company.bussinesslayer.RequestControls.RestPost">
+        <methods>
+          <include name="Execute"/>
+        </methods>
+      </class> <!-- org.company.bussinesslayer.RequestControls.RestPost -->
+      <class name="org.company.bussinesslayer.RequestControls.RestGet">
+        <methods>
+          <include name="Execute"/>
+        </methods>
+      </class> <!-- org.company.bussinesslayer.RequestControls.RestGet -->
+    </classes>
+  </test> <!-- Contracts(failed) -->
+</suite> <!-- Failed suite [Regression] -->
