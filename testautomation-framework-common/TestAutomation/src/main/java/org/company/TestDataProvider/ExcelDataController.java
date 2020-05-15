@@ -1,9 +1,13 @@
 package org.company.TestDataProvider;
 
 import java.sql.ResultSet;
+import java.util.List;
 
 import org.company.BussinessLayer.BussinessObjects.TestData;
 import org.company.BussinessLayer.Interfaces.ITestDataProvider;
+import org.company.TestDataProvider.ExcelDataProvider.ExcelDataLoader;
+import org.company.TestDataProvider.SQLDataProvider.SQLDataLoader;
+import org.company.TestDataProvider.TestDataEntities.TestExecutorConfig;
 
 import com.codoid.products.exception.FilloException;
 import com.codoid.products.fillo.Connection;
@@ -13,15 +17,11 @@ import com.codoid.products.fillo.Recordset;
 public class ExcelDataController {
 	Fillo _excelReaderInstance= new Fillo();
 	
-	public void readDataFromExcel(String FilePath)
+	public static void readDataFromExcel(String FilePath)
 	{
 		try {
-			ITestDataProvider _testData= new TestData();
-			Connection data=_excelReaderInstance.getConnection(FilePath);
-			Recordset rs = data.executeQuery("Select * from TestCases");
-			
-			
-		} catch (FilloException e) {
+			List<TestExecutorConfig> ConfigData =ExcelDataLoader.selectQuery(TestExecutorConfig.class, "Select * From TestExecutorConfig");
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
