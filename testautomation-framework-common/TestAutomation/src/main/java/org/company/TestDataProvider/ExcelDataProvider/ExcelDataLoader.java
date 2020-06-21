@@ -1,18 +1,11 @@
 package org.company.TestDataProvider.ExcelDataProvider;
 
 import java.lang.reflect.Field;
-//import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.company.Application.Annotations.DBTable;
-import org.company.BussinessLayer.BussinessObjects.TestData;
-import org.company.BussinessLayer.Interfaces.ITestDataProvider;
-
 import com.codoid.products.exception.FilloException;
 import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;

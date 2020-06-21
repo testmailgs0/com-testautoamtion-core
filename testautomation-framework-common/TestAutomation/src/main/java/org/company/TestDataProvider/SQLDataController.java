@@ -3,7 +3,8 @@ package org.company.TestDataProvider;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.company.TestDataProvider.TestDataEntities.TestExecutorConfig;
+import org.company.BussinessLayer.BussinessObjects.TestExecutorConfig;
+//import org.company.TestDataProvider.TestDataEntities.TestExecutorConfig;
 import org.company.TestDataProvider.SQLDataProvider.HibernateConfigLoader;
 import org.company.TestDataProvider.SQLDataProvider.SQLDataLoader;
 

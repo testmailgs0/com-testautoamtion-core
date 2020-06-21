@@ -2,7 +2,7 @@ package org.company.TestDataProvider.SQLDataProvider;
 
 import java.util.List;
 
-import org.company.TestDataProvider.TestDataEntities.TestExecutorConfig;
+import org.company.BussinessLayer.BussinessObjects.TestExecutorConfig;
 import org.hibernate.*;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;

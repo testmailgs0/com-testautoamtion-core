@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-
 import org.testng.TestNG;
 import org.testng.xml.*;
 import org.testng.xml.XmlSuite.ParallelMode;
@@ -22,6 +20,12 @@ public class TestNGHelper {
 	private static List<XmlTest> testList = new ArrayList<XmlTest>();
 	private static List<XmlSuite> testSuiteList = new ArrayList<XmlSuite>();
 
+	//Constructor
+	public TestNGHelper()
+	{
+		testSuiteList.clear();
+		testList.clear();
+	}
 	// Member Functions
 	protected static void setSuiteDetails(List<String> SuiteName, ParallelMode Mode) {
 		try {
@@ -97,6 +101,7 @@ public class TestNGHelper {
 	protected static void generateTestNGFiles() {
 		try {
 			for (XmlSuite suite : testSuiteList) {
+				//System.out.println(testSuiteList.get(0).getTests().size());
 				createTestNGFile(suite);
 				suite.setFileName("TestNGSuiteFiles\\" + suite.getName() + ".xml");
 			}
@@ -112,6 +117,58 @@ public class TestNGHelper {
 			_testNGInstance.setXmlSuites(testSuiteList);
 			_testNGInstance.setThreadCount(3);
 			_testNGInstance.run();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	protected static void CreateSuite(String SuiteName, ParallelMode Mode) {
+		try {
+			Suite = new XmlSuite();
+			Suite.setName(SuiteName);
+			Suite.setParallel(Mode);
+			Suite.setAllowReturnValues(true);
+			testSuiteList.add(Suite);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	protected static void CreateTest(String SuiteName, String TestName) {
+		try {
+			for (XmlSuite tempSuite : testSuiteList) {
+				if (tempSuite.getName().equalsIgnoreCase(SuiteName)) {
+					XmlTest Test = new XmlTest(testSuiteList.get(testSuiteList.indexOf(tempSuite)));
+					Test.setName(TestName);
+				}
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	protected static void CreateClasses(String SuiteName, String TestName, String TClass,
+			Map<String, String> Parameters) {
+		try {
+			for (XmlSuite tempSuite : testSuiteList) {
+				if (tempSuite.getName().equalsIgnoreCase(SuiteName)) {
+					for (XmlTest Test : tempSuite.getTests()) {
+						if (Test.getName().equalsIgnoreCase(TestName)) {
+							List<XmlClass> TestClasses = new ArrayList<XmlClass>();
+							XmlClass TestClass = new XmlClass("org.company.BussinessLayer.Controls." + TClass);
+							TestClass.setParameters(Parameters);
+							TestClasses.add(TestClass);
+							testList=testSuiteList.get(testSuiteList.indexOf(tempSuite)).getTests();
+							testSuiteList.get(testSuiteList.indexOf(tempSuite)).getTests()
+									.get(testList.indexOf(Test))
+									.setXmlClasses(TestClasses);
+						}
+					}
+				}
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

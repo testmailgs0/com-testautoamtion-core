@@ -1,41 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression" duration-ms="2837" started-at="2020-05-09T23:32:30 IST" finished-at="2020-05-09T23:32:33 IST">
+  <suite name="Smoke" duration-ms="2409" started-at="2020-06-21T14:41:20 IST" finished-at="2020-06-21T14:41:22 IST">
     <groups>
     </groups>
-    <test name="Claims" duration-ms="2396" started-at="2020-05-09T23:32:30 IST" finished-at="2020-05-09T23:32:32 IST">
+    <test name="SC001" duration-ms="1986" started-at="2020-06-21T14:41:20 IST" finished-at="2020-06-21T14:41:21 IST">
       <class name="org.company.BussinessLayer.Controls.RestGet">
-        <test-method status="PASS" signature="executeControl()[pri:0, instance:org.company.BussinessLayer.Controls.RestGet@32e6e9c3]" name="executeControl" duration-ms="2353" started-at="2020-05-09T23:32:30 IST" finished-at="2020-05-09T23:32:32 IST">
+        <test-method status="PASS" signature="executeControl(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:org.company.BussinessLayer.Controls.RestGet@38102d01]" name="executeControl" duration-ms="1949" started-at="2020-06-21T14:41:20 IST" finished-at="2020-06-21T14:41:21 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CurrentWeatherData]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[City]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[TD001]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- executeControl -->
       </class> <!-- org.company.BussinessLayer.Controls.RestGet -->
-      <class name="org.company.BussinessLayer.Controls.RestPost">
-        <test-method status="PASS" signature="executeControl()[pri:0, instance:org.company.BussinessLayer.Controls.RestPost@5056dfcb]" name="executeControl" duration-ms="0" started-at="2020-05-09T23:32:32 IST" finished-at="2020-05-09T23:32:32 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- executeControl -->
-      </class> <!-- org.company.BussinessLayer.Controls.RestPost -->
-    </test> <!-- Claims -->
-    <test name="Contracts" duration-ms="364" started-at="2020-05-09T23:32:32 IST" finished-at="2020-05-09T23:32:33 IST">
+    </test> <!-- SC001 -->
+    <test name="SC002" duration-ms="328" started-at="2020-06-21T14:41:22 IST" finished-at="2020-06-21T14:41:22 IST">
       <class name="org.company.BussinessLayer.Controls.RestGet">
-        <test-method status="PASS" signature="executeControl()[pri:0, instance:org.company.BussinessLayer.Controls.RestGet@100fc185]" name="executeControl" duration-ms="360" started-at="2020-05-09T23:32:32 IST" finished-at="2020-05-09T23:32:33 IST">
+        <test-method status="PASS" signature="executeControl(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:org.company.BussinessLayer.Controls.RestGet@548e6d58]" name="executeControl" duration-ms="326" started-at="2020-06-21T14:41:22 IST" finished-at="2020-06-21T14:41:22 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CurrentWeatherData]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[City]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[TD001]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- executeControl -->
       </class> <!-- org.company.BussinessLayer.Controls.RestGet -->
-      <class name="org.company.BussinessLayer.Controls.RestPost">
-        <test-method status="PASS" signature="executeControl()[pri:0, instance:org.company.BussinessLayer.Controls.RestPost@643b1d11]" name="executeControl" duration-ms="0" started-at="2020-05-09T23:32:33 IST" finished-at="2020-05-09T23:32:33 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- executeControl -->
-      </class> <!-- org.company.BussinessLayer.Controls.RestPost -->
-    </test> <!-- Contracts -->
-  </suite> <!-- Regression -->
-  <suite name="Smoke" duration-ms="0" started-at="2020-05-09T23:32:33 IST" finished-at="2020-05-09T23:32:33 IST">
-    <groups>
-    </groups>
+    </test> <!-- SC002 -->
   </suite> <!-- Smoke -->
 </testng-results>

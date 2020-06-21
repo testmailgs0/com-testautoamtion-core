@@ -1,49 +1,42 @@
 package org.company.Application;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
-import java.util.*;
-
-import org.company.TestDataProvider.ExcelDataController;
-import org.company.TestDataProvider.SQLDataController;
-import org.company.TestDataProvider.ExcelDataProvider.ExcelConfigLoader;
-import org.company.TestDataProvider.ExcelDataProvider.ExcelDataLoader;
-import org.company.TestDataProvider.TestDataEntities.TestExecutorConfig;
+import java.util.Map;
+import org.company.BussinessLayer.BussinessObjects.TestCaseConfig;
+import org.company.BussinessLayer.BussinessObjects.TestExecutorConfig;
+import org.company.BussinessLayer.BussinessObjects.TestScenarioConfig;
+import org.company.BussinessLayer.Interfaces.ITestDataProvider;
+import org.company.TestDataProvider.TestControllers.TCM_Controller;
 import org.company.Utilities.TestNGHelper;
 import org.testng.xml.XmlSuite.ParallelMode;
 
 public class TestExecutor extends TestNGHelper {
-	@SuppressWarnings("static-access")
+	@SuppressWarnings({ "static-access", "deprecation", "unchecked" })
 	public static void main(String[] args) {
-
-		//ExcelDataController.readDataFromExcel("");
-		//SQLDataController.LoadDataFromTable("", "");
-		SQLDataController.LoadDataFromDatabaseHB();
-		/*
-		 * List<TestExecutorConfigEntity> ConfigData = new
-		 * ArrayList<TestExecutorConfigEntity>(); ConfigData =
-		 * (List<TestExecutorConfigEntity>)
-		 * SQLDataController.LoadDataFromTable("TestExecutorConfig", "TestAutomation");
-		 * System.out.println("Success");
-		 */
-		/*
-		 * DBConfinguration obj2 = new DBConfinguration(); obj2.LoadConfiguration();
-		 */
-
-		/*
-		 * List<String> SuiteNames = Arrays.asList("Regression,Smoke".split(","));
-		 * List<String> TNames = Arrays.asList("Claims,Contracts".split(","));
-		 * List<String> Tclasses = Arrays.asList("RestGet,RestPost".split(","));
-		 * setSuiteDetails(SuiteNames, ParallelMode.FALSE); HashMap<String,
-		 * List<String>> TestToAdd = new HashMap<String, List<String>>();
-		 * TestToAdd.put("Regression", TNames); setTestDetails(TestToAdd);
-		 * HashMap<String, List<String>> ClassesToAdd = new HashMap<String,
-		 * List<String>>(); ClassesToAdd.put("Claims", Tclasses);
-		 * ClassesToAdd.put("Contracts", Tclasses); setClassDetails(ClassesToAdd);
-		 * generateTestNGFiles(); runtTestNgFiles();
-		 */
-
+		ITestDataProvider dataProvider = new TCM_Controller();
+		dataProvider.CreateProvider("Excel");
+		for (TestExecutorConfig Suite : (List<TestExecutorConfig>) dataProvider
+				.getTestExecutionDetails("TestExecutorConfig")) {
+			if (!(Boolean.parseBoolean(Suite.isParallel_Execution())))
+				CreateSuite(Suite.getSuite_Name(), ParallelMode.FALSE);
+			else
+				CreateSuite(Suite.getSuite_Name(), ParallelMode.TRUE);
+			List<String> suiteTests = Arrays.asList(Suite.getScenario_Name().split(","));
+			for (TestScenarioConfig Test : (List<TestScenarioConfig>) dataProvider.getScenarioDetails(suiteTests)) {
+				CreateTest(Suite.getSuite_Name(), Test.getScenarioID()); 
+				List<String> TestCasesToAdd = Arrays.asList(Test.getTestCases().split(","));
+				for (TestCaseConfig TCase : (List<TestCaseConfig>) dataProvider.getTesCaseDetails(TestCasesToAdd)) {
+					Map<String, String> params = new HashMap<String, String>();
+					params.put("API_Name", TCase.getAPI_Name());
+					params.put("ConfigRef", TCase.getEndpoint());
+					params.put("TestDataRef", TCase.getTestDataRef());
+					CreateClasses(Suite.getSuite_Name(), Test.getScenarioID(), TCase.getAction(), params);
+				}
+			}
+		}
+		TestNGHelper.generateTestNGFiles();
+		TestNGHelper.runtTestNgFiles();
 	}
-
 }

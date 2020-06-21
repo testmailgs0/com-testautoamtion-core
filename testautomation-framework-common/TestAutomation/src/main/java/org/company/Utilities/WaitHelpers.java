@@ -7,13 +7,11 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.*;
 
 public class WaitHelpers {
 	private static WebDriverWait Wait;
-	private static FluentWait FWait;
 	protected void ImplicitWait(WebDriver driver,long timeToWait,TimeUnit timeUnit)
 	{
 		try {
@@ -36,7 +34,7 @@ public class WaitHelpers {
 	protected void FluentWait(WebDriver driver,Duration TimeOut,Duration PollingInterval)
 	{
 		try {
-			FWait  = new FluentWait<WebDriver>(driver)
+			new FluentWait<WebDriver>(driver)
 					.withTimeout(TimeOut).pollingEvery(PollingInterval)
 					.ignoring(NoSuchElementException.class);
 		} catch (Exception e) {
