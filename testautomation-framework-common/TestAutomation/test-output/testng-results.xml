@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Smoke" duration-ms="2718" started-at="2020-06-21T20:33:28 IST" finished-at="2020-06-21T20:33:31 IST">
+    <groups>
+    </groups>
+    <test name="SC001" duration-ms="2323" started-at="2020-06-21T20:33:28 IST" finished-at="2020-06-21T20:33:30 IST">
+      <class name="org.company.BussinessLayer.Controls.RestGet">
+        <test-method status="PASS" signature="executeControl(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:org.company.BussinessLayer.Controls.RestGet@424e1977]" name="executeControl" duration-ms="2289" started-at="2020-06-21T20:33:28 IST" finished-at="2020-06-21T20:33:30 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CurrentWeatherData]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[City]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[TD001]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeControl -->
+      </class> <!-- org.company.BussinessLayer.Controls.RestGet -->
+    </test> <!-- SC001 -->
+    <test name="SC002" duration-ms="321" started-at="2020-06-21T20:33:31 IST" finished-at="2020-06-21T20:33:31 IST">
+      <class name="org.company.BussinessLayer.Controls.RestGet">
+        <test-method status="PASS" signature="executeControl(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:org.company.BussinessLayer.Controls.RestGet@6236eb5f]" name="executeControl" duration-ms="316" started-at="2020-06-21T20:33:31 IST" finished-at="2020-06-21T20:33:31 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[CurrentWeatherData]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[City]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[TD001]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeControl -->
+      </class> <!-- org.company.BussinessLayer.Controls.RestGet -->
+    </test> <!-- SC002 -->
+  </suite> <!-- Smoke -->
+</testng-results>

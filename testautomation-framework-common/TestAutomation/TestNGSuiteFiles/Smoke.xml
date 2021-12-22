@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Smoke" allow-return-values="true">
+  <test thread-count="5" name="SC001">
+    <classes>
+      <class name="org.company.BussinessLayer.Controls.RestGet">
+        <parameter name="API_Name" value="CurrentWeatherData"/>
+        <parameter name="ConfigRef" value="City"/>
+        <parameter name="TestDataRef" value="TD001"/>
+      </class> <!-- org.company.BussinessLayer.Controls.RestGet -->
+    </classes>
+  </test> <!-- SC001 -->
+  <test thread-count="5" name="SC002">
+    <classes>
+      <class name="org.company.BussinessLayer.Controls.RestGet">
+        <parameter name="API_Name" value="CurrentWeatherData"/>
+        <parameter name="ConfigRef" value="City"/>
+        <parameter name="TestDataRef" value="TD001"/>
+      </class> <!-- org.company.BussinessLayer.Controls.RestGet -->
+    </classes>
+  </test> <!-- SC002 -->
+</suite> <!-- Smoke -->
